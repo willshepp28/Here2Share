@@ -1,0 +1,21 @@
+{{!-- Header --}}
+<header class="banner-bg">
+    <nav class="flex-row-spaceEvenly">
+
+        <h1>Here2Share</h1>
+        <ul class="flex-row-center">
+            <li><a href="/">Home</a></li>
+            <li><a href="/shop">Shop</a></li>
+
+
+            {{#if isAuthenticated}}
+                <li><a class="loggedInAs">Logged in as </a></li>
+                <li><a href="/dashboard">Dashboard</a></li>
+                <li><a href="/logout">Log out</a></li>
+            {{else}}
+            <li><a href="/login">Log In</a></li>
+            <li><a href="/signup">Sign Up</a></li>
+            {{/if}}
+        </ul>
+    </nav>
+</header>

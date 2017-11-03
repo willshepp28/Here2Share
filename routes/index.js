@@ -19,10 +19,18 @@ router
     .route('/')
     .get(async (request, response) => {
 
-        var category = Category.find()
+        var popular = await Product.find({_category: "59fb5854cc3eff65a9bfe9ba" }).populate('_category').populate('_productOwner');
+        var appliance = await Product.find({_category: "59fa583f64e67f4a98c0738d" }).populate('_category').populate('_productOwner').limit(3);
+        var jewelry = await Product.find({_category: "59fa583f64e67f4a98c0738e" }).populate('_category').populate('_productOwner');
+        
+       
+        // console.log(popular, 'categories with popular');
+     
+
+        var category = await Category.find()
             .then(function (category) {
                 // console.log(category);
-                response.render('home', { category: category, isAuthenticated: request.session.isAuthenticated });
+                response.render('home', { category: category,popular: popular, appliance: appliance, jewelry: jewelry, isAuthenticated: request.session.isAuthenticated });
             })
             .catch(function (err) {
                 console.log(err);
@@ -145,6 +153,41 @@ router
     .get((request, response) => {
         response.render("dashboard", { isAuthenticated: request.session.isAuthenticated });
     })
+
+
+
+
+
+/*
+ |--------------------------------------------------------------------------
+ | addProduct
+ |--------------------------------------------------------------------------
+ */
+router
+.route('/addProduct')
+.post(async(request, response) => {
+    
+    const name = request.body.name,
+        price = request.body.price,
+        description = request.body.description,
+        _productOwner = request.body.productOwner,
+        _category = request.body.category;
+
+
+
+
+        var product = await Product.create({ name: name, price: price, description: description, _productOwner, _category })
+        .then((product) => {
+            console.log(product);
+            response.redirect("/dashboard");
+        })
+        .catch((err) => {
+            console.log(err);
+            response.redirect("/");
+        })
+
+    
+})
 
 
 

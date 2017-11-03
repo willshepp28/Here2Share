@@ -74,7 +74,12 @@ request.session.pageViews += 1;
   console.log(request.session)
   next();
 });
-// sequelize model:create --name User --attributes
+
+
+
+
+
+
 
 /*
 |--------------------------------------------------------------------------

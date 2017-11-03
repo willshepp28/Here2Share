@@ -1,3 +1,88 @@
 <div class="homepage-hero">
 
 </div>
+
+
+<main>
+    <section class="categories">
+        <h2>Categories</h2>
+        <section class="allCategories">
+            {{#each category}}
+            <p class="royalblue-gradient-bg shadow">{{name}}</p>
+            {{/each}}
+        </section>
+
+    </section>
+
+
+    <section class="Popular">
+        <h2>Popular</h2>
+        <section class="products">
+            {{#each popular}}
+            <div class="product">
+                <img class="shadow" src="{{productImage}}" alt="">
+                <h3 class="text-center marginTp10">{{name}}</h3>
+                <p><strong>Description:</strong> {{description}}</p>
+                <p><strong>Price:</strong> ${{price}} per day</p>
+                <p><strong>Product Owner: </strong>{{_productOwner.username}}</p>
+                {{#if isAvailable}}
+                <p class="text-center red">Product is not Available</p>
+                    
+                {{else}}
+                    <p class="text-center lightgreen">Product is Available</p>
+                {{/if}}
+
+                
+            </div>
+            {{/each}}
+        </section>
+    </section>
+
+    <section class="Appliances">
+        <h2>Appliances</h2>
+         <section class="products">
+            {{#each appliance}}
+            <div class="product">
+                <img class="shadow" src="{{productImage}}" alt="">
+                <h3 class="text-center">{{name}}</h3>
+                <p><strong>Description:</strong> {{description}}</p>
+                <p><strong>Price:</strong> ${{price}} per day</p>
+                <p><strong>Product Owner: </strong>{{_productOwner.username}}</p>
+                {{#if isAvailable}}
+                <p class="text-center red">Product is not Available</p>
+                    
+                {{else}}
+                    <p class="text-center lightgreen">Product is Available</p>
+                {{/if}}
+
+                
+            </div>
+            {{/each}}
+        </section>
+    </section>
+
+
+
+    <section class="jewelry">
+        <h2>Jewelry</h2>
+         <section class="products">
+            {{#each jewelry}}
+            <div class="product">
+                <img class="shadow" src="{{productImage}}" alt="">
+                <h3 class="text-center">{{name}}</h3>
+                <p><strong>Description:</strong> {{description}}</p>
+                <p><strong>Price:</strong> ${{price}} per day</p>
+                <p><strong>Product Owner: </strong>{{_productOwner.username}}</p>
+                {{#if isAvailable}}
+                <p class="text-center red">Product is not Available</p>
+                    
+                {{else}}
+                    <p class="text-center lightgreen">Product is Available</p>
+                {{/if}}
+
+                
+            </div>
+            {{/each}}
+        </section>
+    </section>
+</main>

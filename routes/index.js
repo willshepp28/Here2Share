@@ -19,9 +19,9 @@ router
     .route('/')
     .get(async (request, response) => {
 
-        var popular = await Product.find({_category: "59fb5854cc3eff65a9bfe9ba" }).populate('_category').populate('_productOwner');
+        var popular = await Product.find({_category: "59fb5854cc3eff65a9bfe9ba" }).populate('_category').populate('_productOwner').limit(3);
         var appliance = await Product.find({_category: "59fa583f64e67f4a98c0738d" }).populate('_category').populate('_productOwner').limit(3);
-        var jewelry = await Product.find({_category: "59fa583f64e67f4a98c0738e" }).populate('_category').populate('_productOwner');
+        var jewelry = await Product.find({_category: "59fa583f64e67f4a98c0738e" }).populate('_category').populate('_productOwner').limit(3);
         
        
         // console.log(popular, 'categories with popular');

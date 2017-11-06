@@ -125,6 +125,10 @@ a { text-decoration: none;}
     
 }
 
+.pink-bg {
+    background: #F64C72;
+}
+
 .shadow {
     box-shadow: 0 16px 24px 2px rgba(0,0,0,.14), 0 6px 30px 5px rgba(0,0,0,.12), 0 8px 10px -5px rgba(0,0,0,.3);
 }
@@ -174,7 +178,7 @@ a { text-decoration: none;}
 
 .red { color: red;}
 .lightgreen { color: green; }
-
+.lightgreen-bg { background: green }
 
 
 
@@ -309,6 +313,17 @@ section {
     background: white;
     margin-right: 20px;
     width: 26%;
+}
+
+.product-button {
+    color: white;
+    border-radius: 3px;
+    border: none;
+    width: 38%;
+    padding: 10px;
+    align-self: center;
+    font-size: 17px;
+    font-weight: 900;
 }
 
 .jewelry {

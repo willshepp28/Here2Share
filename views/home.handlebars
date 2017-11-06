@@ -1,9 +1,9 @@
 
 
-<div class="jumbotron jumbotron-fluid">
+<div class="jumbotron jumbotron-fluid marginBtm50">
   <div class="container">
-    <h1 class="display-3">Fluid jumbotron</h1>
-    <p class="lead">This is a modified jumbotron that occupies the entire horizontal space of its parent.</p>
+    <h1 class="display-3 white">Here2Share</h1>
+    <p class="lead intro">a online platform to connect users who would like to loan their personal items to customers </p>
   </div>
 </div>
 
@@ -11,7 +11,7 @@
 <main>
 
 
-    <section class="container categories">
+    <section class="container categories marginBtm50">
         <h2>Categories</h2>
         <section class="container allCategories">
             {{#each category}} {{!--
@@ -25,8 +25,9 @@
     </section>
 
 
-    <section class="container  Popular">
+    <section class="container Popular marginBtm50">
         <h2>Popular</h2>
+       
         <section class="container products">
             <div class="row">
             {{#each popular}}
@@ -36,7 +37,15 @@
                     <h4 class="card-title">{{name}}</h4>
                     <p class="card-text">{{description}}</p>
                     <p class="card-text">${{price}} per day</p>
+
+                    {{#if isAvailable}}
+                <p class="text-center red font20">Product is not Available <i class="fa fa-frown-o" aria-hidden="true"></i></p>
+                    
+                {{else}}
+                    {{!-- <p class="text-center lightgreen">Product is Available</p> --}}
                     <a href="#" class="btn btn-success">Rent Me</a>
+                {{/if}}
+                    
                 </div>
             </div>
             {{/each}}
@@ -44,8 +53,9 @@
         </section>
     </section>
 
-    <section class="container Appliances">
+    <section class="container Appliances marginBtm50">
         <h2>Appliances</h2>
+        <a href="/shop/appliances">See All</a>
            <section class="container products">
             <div class="row">
             {{#each appliance}}
@@ -55,7 +65,15 @@
                     <h4 class="card-title">{{name}}</h4>
                     <p class="card-text">{{description}}</p>
                     <p class="card-text">${{price}} per day</p>
+                    
+                       {{#if isAvailable}}
+                <p class="text-center red font20">Product is not Available <i class="fa fa-frown-o" aria-hidden="true"></i></p>
+                    
+                {{else}}
+                    {{!-- <p class="text-center lightgreen">Product is Available</p> --}}
                     <a href="#" class="btn btn-success">Rent Me</a>
+                {{/if}}
+                    
                 </div>
             </div>
             {{/each}}
@@ -66,7 +84,7 @@
 
 
 
-    <section class="jewelry container">
+    <section class="jewelry container marginBtm50">
         <h2>Jewelry</h2>
           <section class="container products">
             <div class="row">
@@ -77,7 +95,15 @@
                     <h4 class="card-title">{{name}}</h4>
                     <p class="card-text">{{description}}</p>
                     <p class="card-text">${{price}} per day</p>
+                    
+                       {{#if isAvailable}}
+                <p class="text-center red marginTp10 font20">Product is not Available <i class="fa fa-frown-o" aria-hidden="true"></i></p>
+                    
+                {{else}}
+                    {{!-- <p class="text-center lightgreen">Product is Available</p> --}}
                     <a href="#" class="btn btn-success">Rent Me</a>
+                {{/if}}
+                    
                 </div>
             </div>
             {{/each}}

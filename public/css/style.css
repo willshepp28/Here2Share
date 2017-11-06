@@ -119,7 +119,7 @@ a { text-decoration: none;}
     /* background: linear-gradient(270deg, #00ffff, #ff7bac); */
     padding: 10px;
 }
-
+.white { color: white;}
 .pink-color {
     color: #F64C72;
     
@@ -176,7 +176,7 @@ a { text-decoration: none;}
 .marginRt10 { margin-right: 10px;}
 .marginTp50 {margin-top: 50px;}
 .marginBtm50 {margin-bottom: 50px;}
-
+.font20 { font-size: 20px;}
 
 .red { color: red;}
 .lightgreen { color: green; }
@@ -195,11 +195,21 @@ a { text-decoration: none;}
         Body Styles
    ========================================================================== */
 /**/
+
+
+header {
+    color: white;
+}
+
+
 .jumbotron {
     background-image: url("../img/banner2.jpg");
     background-size: cover;}
 
-
+    .intro {
+        color: white;
+        font-weight: bold;
+    }
 
 .productImg {height: 200px; }
 

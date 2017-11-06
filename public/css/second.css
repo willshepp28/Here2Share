@@ -172,8 +172,7 @@ a { text-decoration: none;}
 
 
 .marginTp10 { margin-top: 10px;}
-.marginBtm10 {margin-bottom: 10px;}
-.marginRt10 { margin-right: 10px;}
+.marginBtm10 { margin-bottom: 10px !important;}
 .marginTp50 {margin-top: 50px;}
 .marginBtm50 {margin-bottom: 50px;}
 
@@ -187,25 +186,241 @@ a { text-decoration: none;}
     
  }
 
-.no-pdmg {
-    padding: 0 !important;
-}
+
 
 /* ==========================================================================
         Body Styles
    ========================================================================== */
 /**/
-.jumbotron {
-    background-image: url("../img/banner2.jpg");
-    background-size: cover;}
+a:hover { cursor: pointer;}
+header { color: white; height: 120px;}
+header li {margin-right: 10px;}
+header a {color: white; text-decoration: none;}
+
+.head-color {
+    background: #2F2FA2;
+}
 
 
+.banner-bg h1 { font-size: 50px; }
+.banner-bg li { font-size: 30px; }
 
-.productImg {height: 200px; }
+
+header li:last-child {
+    background-color: #B333B3;
+    border-radius: 5px;
+    padding: 10px;
+}
+
+.homepage-hero {
+    
+
+    background-image: url("../img/banner2.jpg"); 
+    min-height: 700px;
+    width: 100%;
+    background-position: 100% 100%;
+    background-repeat: no-repeat;
+    background-size: cover;
+  
+}
+
+.purpose-container h1 {
+    font-size: 91%;
+    margin-bottom: 35px;
+}
+
+.container {
+    display: flex; 
+    justify-content: center; 
+    flex-direction: column; 
+    height:100%;
+    min-height:100%;
+    height:auto !important;
+    margin:0 auto -100px;
+    align-items: center;
+ }
+
+.chose div {
+    margin-bottom: 10px;
+    text-align: center;
+    padding: 13px;
+    width: 85%;
+    border-radius: 3px;
+}
+
+/* .chose div:hover {
+    background: #e43a15;
+   
+} */
+.chose a:hover {color: white;}
+.chose a { color: black; font-size: 75%;}
 
 
-footer {
-    height: 50px;
-    color: white;
+form {
+    margin-bottom: 20px;
+    border: #ccc;
+    background: white;
+}
+
+form input {
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+}
+form button {
+    border: none;
+    border-radius: 3px;
+    margin: 0 auto;
+
+    padding: 10px;
+}
+
+main {
+    padding: 15px;
+}
+
+section {
+    margin-top: 50px;
     text-align: center;
 }
+
+
+.allCategories {
+    display: flex;
+    justify-content: center;
+
+}
+
+
+.allCategories p {
+    color: white;
+    border-radius: 3px;
+    padding: 20px;
+    /* background-color: #B333B3; */
+    
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+.products {
+    display: flex;
+    
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.product img {
+    height: 200px;
+}
+
+.product {
+    display: flex;
+    flex-direction: column;
+    padding: 25px;
+    border-radius: 5px;
+    background: white;
+    margin-right: 20px;
+    width: 26%;
+}
+
+.product-button {
+    color: white;
+    border-radius: 3px;
+    border: none;
+    width: 38%;
+    padding: 10px;
+    align-self: center;
+    font-size: 17px;
+    font-weight: 900;
+}
+
+.jewelry {
+    margin-bottom: 100px;
+}
+#clear{
+    height:100px;
+    clear:both;
+  }
+
+footer {
+    /* position: relative;
+    height: 100px;
+    bottom: 0;
+    margin-top: -100px; */
+    height: 100px;
+    clear: both;
+    text-align: center;
+    color: white;
+}
+
+
+
+/* 
+  ##Device = Most of the Smartphones Mobiles (Portrait)
+  ##Screen = B/w 320px to 479px
+*/
+
+@media (min-width: 320px) and (max-width: 480px) {
+    
+
+    
+  }
+
+
+/* 
+  ##Device = Low Resolution Tablets, Mobiles (Landscape)
+  ##Screen = B/w 481px to 767px
+*/
+
+@media (min-width: 481px) and (max-width: 767px) {
+    
+    
+    
+}
+
+
+/* 
+  ##Device = Tablets, Ipads (landscape)
+  ##Screen = B/w 768px to 1024px
+*/
+
+@media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
+    
+
+    
+}
+
+
+/* 
+  ##Device = Tablets, Ipads (portrait)
+  ##Screen = B/w 768px to 1024px
+*/
+
+@media (min-width: 768px) and (max-width: 1024px) {
+    
+
+    
+}
+
+
+/* 
+  ##Device = Laptops, Desktops
+  ##Screen = B/w 1025px to 1280px
+*/
+
+@media (min-width: 1025px) and (max-width: 1280px) {
+    
+  
+    
+}
+
+
+/* 
+  ##Device = Desktops
+  ##Screen = 1281px to higher resolution desktops
+*/
+
+@media (min-width: 1281px) {
+    
+
+    
+  }

@@ -1,91 +1,88 @@
-<div class="homepage-hero">
 
+
+<div class="jumbotron jumbotron-fluid">
+  <div class="container">
+    <h1 class="display-3">Fluid jumbotron</h1>
+    <p class="lead">This is a modified jumbotron that occupies the entire horizontal space of its parent.</p>
+  </div>
 </div>
 
 
 <main>
-    <section class="categories">
+
+
+    <section class="container categories">
         <h2>Categories</h2>
-        <section class="allCategories">
-            {{#each category}}
-            <p class="royalblue-gradient-bg shadow">{{name}}</p>
+        <section class="container allCategories">
+            {{#each category}} {{!--
+            <p class="royalblue-gradient-bg shadow">{{name}}</p> --}}
+            <a href="#" class="badge badge-warning">{{name}}</a>
             {{/each}}
         </section>
+
+
 
     </section>
 
 
-    <section class="Popular">
+    <section class="container  Popular">
         <h2>Popular</h2>
-        <section class="products">
+        <section class="container products">
+            <div class="row">
             {{#each popular}}
-            <div class="product">
-                <img class="shadow" src="{{productImage}}" alt="">
-                <h3 class="text-center marginTp10">{{name}}</h3>
-                <p><strong>Description:</strong> {{description}}</p>
-                <p><strong>Price:</strong> ${{price}} per day</p>
-                <p><strong>Product Owner: </strong>{{_productOwner.username}}</p>
-                {{#if isAvailable}}
-                <p class="text-center red">Product is not Available</p>
-                    
-                {{else}}
-                    <p class="text-center lightgreen">Product is Available</p>
-                    <button class="product-button pink-bg">Rent Me</button>
-                {{/if}}
-
-                
+            <div class="card marginBtm10 marginRt10" style="width: 20rem;">
+                <img class="card-img-top productImg" src="{{productImage}}" alt="Card image cap">
+                <div class="card-body">
+                    <h4 class="card-title">{{name}}</h4>
+                    <p class="card-text">{{description}}</p>
+                    <p class="card-text">${{price}} per day</p>
+                    <a href="#" class="btn btn-success">Rent Me</a>
+                </div>
             </div>
             {{/each}}
+            </div>
         </section>
     </section>
 
-    <section class="Appliances">
+    <section class="container Appliances">
         <h2>Appliances</h2>
-         <section class="products">
+           <section class="container products">
+            <div class="row">
             {{#each appliance}}
-            <div class="product">
-                <img class="shadow" src="{{productImage}}" alt="">
-                <h3 class="text-center">{{name}}</h3>
-                <p><strong>Description:</strong> {{description}}</p>
-                <p><strong>Price:</strong> ${{price}} per day</p>
-                <p><strong>Product Owner: </strong>{{_productOwner.username}}</p>
-                {{#if isAvailable}}
-                <p class="text-center red">Product is not Available</p>
-                    
-                {{else}}
-                    <p class="text-center lightgreen">Product is Available</p>
-                    <button class="product-button pink-bg">Rent Me</button>
-                {{/if}}
-
-                
+            <div class="card marginBtm10 marginRt10" style="width: 20rem;">
+                <img class="card-img-top productImg" src="{{productImage}}" alt="Card image cap">
+                <div class="card-body">
+                    <h4 class="card-title">{{name}}</h4>
+                    <p class="card-text">{{description}}</p>
+                    <p class="card-text">${{price}} per day</p>
+                    <a href="#" class="btn btn-success">Rent Me</a>
+                </div>
             </div>
             {{/each}}
+            </div>
+        </section>
         </section>
     </section>
 
 
 
-    <section class="jewelry">
+    <section class="jewelry container">
         <h2>Jewelry</h2>
-         <section class="products">
+          <section class="container products">
+            <div class="row">
             {{#each jewelry}}
-            <div class="product">
-                <img class="shadow" src="{{productImage}}" alt="">
-                <h3 class="text-center">{{name}}</h3>
-                <p><strong>Description:</strong> {{description}}</p>
-                <p><strong>Price:</strong> ${{price}} per day</p>
-                <p><strong>Product Owner: </strong>{{_productOwner.username}}</p>
-                {{#if isAvailable}}
-                <p class="text-center red">Product is not Available</p>
-                    
-                {{else}}
-                    <p class="text-center lightgreen">Product is Available</p>
-                    <button class="product-button pink-bg">Rent Me</button>
-                {{/if}}
-
-                
+            <div class="card marginBtm10 marginRt10" style="width: 20rem;">
+                <img class="card-img-top productImg" src="{{productImage}}" alt="Card image cap">
+                <div class="card-body">
+                    <h4 class="card-title">{{name}}</h4>
+                    <p class="card-text">{{description}}</p>
+                    <p class="card-text">${{price}} per day</p>
+                    <a href="#" class="btn btn-success">Rent Me</a>
+                </div>
             </div>
             {{/each}}
+            </div>
+        </section>
         </section>
     </section>
 </main>

@@ -56,6 +56,36 @@ router
 
 
 
+
+router
+    .route('/shop/:category')
+    .get(async(request,response) => {
+
+        // var popular = await Product.find({_category: "59fb5854cc3eff65a9bfe9ba" }).populate('_category').populate('_productOwner').limit(3);
+        const selectedCategory = request.params.category;
+        console.log(selectedCategory);
+
+        var category = await Category.find({name: selectedCategory})
+            .then(function(category){
+                console.log("-______-")
+                console.log(category[0]._id)
+
+                var products = Product.find({_category: category[0]._id});
+
+               
+
+              
+                response.render('shop', { product: products, isAuthenticated: request.session.isAuthenticated})
+            })
+            .catch(function(err){
+                console.log(err);
+                response.redirect("/");
+            });
+    })
+
+
+
+
 /*
  |--------------------------------------------------------------------------
  | Signup

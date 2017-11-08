@@ -1,1 +1,35 @@
 <h1>Shop</h1>
+
+
+
+    <section class="container Popular marginBtm50">
+        <h2>{{name}}</h2>
+       
+        <section class="container products">
+            <div class="row">
+            {{#each product}}
+            <div class="card marginBtm10 marginRt10" style="width: 20rem;">
+                <img class="card-img-top productImg" src="{{productImage}}" alt="Card image cap">
+                <div class="card-body">
+                    <h4 class="card-title">{{name}}</h4>
+                    <p class="card-text">{{description}}</p>
+                    <p class="card-text">${{price}} per day</p>
+
+                    {{#if isAvailable}}
+                <p class="text-center red font20">Product is not Available <i class="fa fa-frown-o" aria-hidden="true"></i></p>
+                    
+                {{else}}
+                    {{!-- <p class="text-center lightgreen">Product is Available</p> --}}
+                    <a href="#" class="btn btn-success">Rent Me</a>
+                {{/if}}
+                    
+                </div>
+            </div>
+            {{/each}}
+            </div>
+        </section>
+    </section>
+{{!-- 
+    {{else}}
+            <p class="text-center red font20">No Products Available Yet <i class="fa fa-frown-o" aria-hidden="true"></i></p>
+    {{/if}} --}}

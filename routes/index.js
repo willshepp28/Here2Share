@@ -23,6 +23,9 @@ router
         var appliance = await Product.find({_category: "59fa583f64e67f4a98c0738d" }).populate('_category').populate('_productOwner').limit(3);
         var jewelry = await Product.find({_category: "59fa583f64e67f4a98c0738e" }).populate('_category').populate('_productOwner').limit(3);
         
+      
+
+    
        
         // console.log(popular, 'categories with popular');
      
@@ -65,22 +68,18 @@ router
         const selectedCategory = request.params.category;
         console.log(selectedCategory);
 
-        var category = await Category.find({name: selectedCategory})
-            .then(function(category){
-                console.log("-______-")
-                console.log(category[0]._id)
 
-                var products = Product.find({_category: category[0]._id});
 
-               
+            var category = await Category.find({ name: selectedCategory }).populate('products');
+            console.log("____________");
+            console.log("____________");
+            console.log("____________");
+            console.log("____________");
+            console.log(category[0]);
+            response.render('shop', { category: category, isAuthenticated: request.session.isAuthenticated });
+            // response.json(category);
 
-              
-                response.render('shop', { product: products, isAuthenticated: request.session.isAuthenticated})
-            })
-            .catch(function(err){
-                console.log(err);
-                response.redirect("/");
-            });
+
     })
 
 
@@ -129,7 +128,7 @@ router
                 .catch((err) => {
                     console.log(err);
                     response.redirect("/login");
-                })
+                });
 
         }
 

@@ -16,7 +16,7 @@ const CategoriesSchema = new mongoose.Schema({
         products: [{ type: Schema.Types.ObjectId, ref: "Products" }]
     
     });
-    
+
 const Categories = mongoose.model('Categories', CategoriesSchema);
 
 

@@ -13,6 +13,7 @@ bcrypt = require('bcrypt'),
 mongoose = require('mongoose'),
 handlebars = require('express-handlebars'),
 index = require('./routes/index'),
+Promise = require('bluebird'),
 port = process.env.PORT || 3000;
 application = express();
 

@@ -3,6 +3,8 @@ exports.up = function(knex, Promise) {
   return knex.schema.createTable('users', (table) => {
       table.increments();
       table.string('username').notNullable();
+      table.string('firstname').notNullable();
+      table.string('lastname').notNullable();
       table.string('profilePic').notNullable();
       table.string('email').notNullable();
       table.string('city').notNullable();
@@ -22,8 +24,8 @@ exports.up = function(knex, Promise) {
         table.timestamp('created_at').defaultTo(knex.fn.now()); // puts current time
         table.text('description').notNullable();
         table.boolean('isAvailable').notNullable().defaultTo(false);
-        table.integer('_productOwner').references('id').inTable('users'); 
-        table.integer('_category').references('id').inTable('categories'); 
+        table.integer('_productOwner').unsigned().references('id').inTable('users'.onDelete('cascade')); 
+        table.integer('_category').unsigned().references('id').inTable('categories'); 
     })
 };
 

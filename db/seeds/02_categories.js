@@ -14,10 +14,13 @@ exports.seed = function(knex, Promise) {
         {id: 7, name: 'tools'},
         {id: 8, name: 'electronics'},
         {id: 9, name: 'boats'},
-        {id: 10, name: ''},
-        {id: 11, name: ''},
-        {id: 12, name: ''},
-        {id: 13, name: ''}
+        {id: 10, name: 'services'},
+        {id: 11, name: 'video games'},
+        {id: 12, name: 'household'},
+        {id: 13, name: 'housing'},
+        {id: 14, name: 'motorcycles'},
+        {id: 15, name: 'camping'},
+        {id: 16, name: 'outdoor'}
       ]);
     });
 };
@@ -41,42 +44,3 @@ household
 housing
 
 */
-
-db.categories.insert([
-  {
-      name:"Appliances"
-  },
-  {
-      name:"Jewelry"
-  },
-  {
-      name:"Bikes"
-  },
-  {
-      name:"Automotive"
-  },
-  {
-      name:"Photo/Video"
-  },
-  {
-      name:"Tools"
-  },
-  {
-      name:"Electronics"
-  },
-  {
-      name:"Books"
-  },
-  {
-      name:"Boats"
-  },
-  {
-      name:"Services"
-  }
-]);
-const CategoriesSchema = new mongoose.Schema({
-  
-      name: { type: String, required: true },
-      products: [{ type: Schema.Types.ObjectId, ref: "Products" }]
-  
-  });

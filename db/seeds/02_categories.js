@@ -21,7 +21,9 @@ exports.seed = function(knex, Promise) {
         {id: 14, name: 'motorcycles'},
         {id: 15, name: 'camping'},
         {id: 16, name: 'outdoor'},
-        {id: 17, name: 'movies'}
+        {id: 17, name: 'movies'},
+        {id: 18, name: 'jewelry'},
+        {id:19 , name: 'furniture'}
       ]);
     });
 };

@@ -19,11 +19,11 @@ exports.up = function(knex, Promise) {
     .createTable('products', (table) => {
         table.increments();
         table.string('name').notNullable();
-        table.integer('price').notNullable();
+        table.decimal('price', 14,2).notNullable();
         table.string('productImage').notNullable();
         table.timestamp('created_at').defaultTo(knex.fn.now()); // puts current time
         table.text('description').notNullable();
-        table.boolean('isAvailable').notNullable().defaultTo(false);
+        table.boolean('isAvailable').notNullable().defaultTo(true);
         table.integer('_productOwner').unsigned().references('id').inTable('users'.onDelete('cascade')); 
         table.integer('_category').unsigned().references('id').inTable('categories'); 
     })
@@ -33,3 +33,9 @@ exports.down = function(knex, Promise) {
     return knex.schema.dropTable('users').dropTable('categories').dropTable('products');
 };
 
+
+
+/* 
+
+
+*/

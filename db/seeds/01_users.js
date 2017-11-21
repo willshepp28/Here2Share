@@ -3,11 +3,11 @@ const crypto = require('crypto');
 
 exports.seed = function(knex, Promise) {
   // Deletes ALL existing entries
-  return knex('table_name').del()
+  return knex('users').del()
     .then(function () {
       // Inserts seed entries
-      return knex('table_name').insert([
-        {id: 1, username: 'willshepp44', firstname: '', lastname: '', profilePic: 'https://image.flaticon.com/icons/png/128/149/149452.png', email: 'willsheppard@gmail.com', city: 'Charleston', state: 'SC', street: '201 main street', password: genRandomString('123')},
+      return knex('users').insert([
+        {id: 1, username: 'willshepp44', firstname: 'Will', lastname: 'Sheppard', profilePic: 'https://image.flaticon.com/icons/png/128/149/149452.png', email: 'willsheppard2@gmail.com', city: 'Charleston', state: 'SC', street: '201 main street', password: genRandomString('123')},
         {id: 2, username: 'tomFord', firstname: 'Tom', lastname: 'Ford', profilePic: 'https://image.flaticon.com/icons/png/128/149/149452.png', email: 'tomford@outlook.com', city: 'Charleston', state: 'SC', street: '5 virgina ave', password: genRandomString('tomford66')},
         {id: 3, username: 'tammy_ballin1', firstname: 'Tammy', lastname: 'Smith', profilePic: 'https://image.flaticon.com/icons/png/128/149/149452.png', email: 'tammyballin@gmail.com', city: 'Charleston', state: 'SC', street: '55 bayside blvd', password: genRandomString('555')},
         {id: 4, username: 'sarahlovin5', firstname: 'Sarah', lastname: 'McCormick', profilePic: 'https://image.flaticon.com/icons/png/128/149/149452.png', email: 'sarahzzzworld@yahoo.com', city: 'Charleston', state: 'SC', street: '2 davidson blvd', password: genRandomString('666')},

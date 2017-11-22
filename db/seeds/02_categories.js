@@ -23,7 +23,8 @@ exports.seed = function(knex, Promise) {
         {id: 16, name: 'outdoor'},
         {id: 17, name: 'movies'},
         {id: 18, name: 'jewelry'},
-        {id:19 , name: 'furniture'}
+        {id:19 , name: 'furniture'},
+        {id: 20, name: 'games'}
       ]);
     });
 };

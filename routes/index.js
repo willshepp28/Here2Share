@@ -62,18 +62,23 @@ router
 
         // var popular = await Product.find({_category: "59fb5854cc3eff65a9bfe9ba" }).populate('_category').populate('_productOwner').limit(3);
         const selectedCategory = request.params.category;
-        console.log(selectedCategory);
+    
 
 
 
-            var category = await Category.find({ name: selectedCategory }).populate('products');
-            console.log("____________");
-            console.log("____________");
-            console.log("____________");
-            console.log("____________");
-            console.log(category[0]);
-            response.render('shop', { category: category, isAuthenticated: request.session.isAuthenticated });
-            // response.json(category);
+            
+            var category = await knex.select()
+                .from('products')
+                .where('_category', selectedCategory)
+                .then((category) => {
+                    response.render('shop', { category: category, isAuthenticated: request.session.isAuthenticated });
+                })
+                .catch((err) => {
+                    console.log(err);
+                    response.send(err);
+                });
+           
+        
 
 
     })

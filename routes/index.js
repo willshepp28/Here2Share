@@ -6,6 +6,7 @@ const router = require('express').Router(),
 const User = require('../models/users');
 const Product = require('../models/products');
 const Category = require('../models/categories');
+const knex = require('../db/knex');
 
 
 
@@ -19,26 +20,21 @@ router
     .route('/')
     .get(async (request, response) => {
 
-        var popular = await Product.find({_category: "59fb5854cc3eff65a9bfe9ba" }).populate('_category').populate('_productOwner').limit(3);
-        var appliance = await Product.find({_category: "59fa583f64e67f4a98c0738d" }).populate('_category').populate('_productOwner').limit(3);
-        var jewelry = await Product.find({_category: "59fa583f64e67f4a98c0738e" }).populate('_category').populate('_productOwner').limit(3);
-        
-      
+        var popular = await knex.select().from('products').where('_category', 5).limit(3);
+        var appliance = await knex.select().from('products').where('_category', 2).limit(3);
+        var jewelry = await knex.select().from('products').where('_category', 18).limit(3);
 
-    
-       
-        // console.log(popular, 'categories with popular');
-     
 
-        var category = await Category.find()
-            .then(function (category) {
-                // console.log(category);
-                response.render('home', { category: category,popular: popular, appliance: appliance, jewelry: jewelry, isAuthenticated: request.session.isAuthenticated });
+        var category = await knex.select()
+            .from('categories')
+            .then((category) => {
+                response.render('home', { category: category, popular: popular, appliance: appliance, jewelry: jewelry, isAuthenticated: request.session.isAuthenticated });
             })
-            .catch(function (err) {
-                console.log(err);
-                console.log('error');
+            .catch((err) => {
+                response.send(err);
             });
+    
+    
 
     });
 
